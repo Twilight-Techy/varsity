@@ -11,11 +11,7 @@ import { Loader2 } from "lucide-react"
 
 export function AcademicSettings() {
   const [isLoading, setIsLoading] = useState(false)
-  
-  const handleSave = () => {
-    setIsLoading(true)
-    // Simulate API  = useState(false)
-  
+
   const handleSave = () => {
     setIsLoading(true)
     // Simulate API call
@@ -29,14 +25,12 @@ export function AcademicSettings() {
       <Card>
         <CardHeader>
           <CardTitle>Academic Settings</CardTitle>
-          <CardDescription>
-            Manage your academic information and preferences
-          </CardDescription>
+          <CardDescription>Manage your academic information and preferences</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-4">
             <h3 className="font-medium">Academic Profile</h3>
-            
+
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="university">University</Label>
@@ -52,7 +46,7 @@ export function AcademicSettings() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="faculty">Faculty/School</Label>
                 <Select defaultValue="engineering">
@@ -68,7 +62,7 @@ export function AcademicSettings() {
                 </Select>
               </div>
             </div>
-            
+
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="department">Department</Label>
@@ -84,7 +78,7 @@ export function AcademicSettings() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="year">Year/Level</Label>
                 <Select defaultValue="3">
@@ -101,7 +95,7 @@ export function AcademicSettings() {
                 </Select>
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="student-id">Student ID (Optional)</Label>
               <Input id="student-id" placeholder="Enter your student ID" />
@@ -110,21 +104,19 @@ export function AcademicSettings() {
               </p>
             </div>
           </div>
-          
+
           <div className="space-y-4 pt-6 border-t">
             <h3 className="font-medium">Schedule Preferences</h3>
-            
+
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label htmlFor="schedule-reminders">Schedule Reminders</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Receive reminders for upcoming classes and deadlines
-                  </p>
+                  <p className="text-sm text-muted-foreground">Receive reminders for upcoming classes and deadlines</p>
                 </div>
                 <Switch id="schedule-reminders" defaultChecked />
               </div>
-              
+
               <div className="grid gap-2">
                 <Label htmlFor="reminder-time">Reminder Time</Label>
                 <Select defaultValue="30">
@@ -140,13 +132,11 @@ export function AcademicSettings() {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label htmlFor="show-weekends">Show Weekends</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Display weekends in your schedule view
-                  </p>
+                  <p className="text-sm text-muted-foreground">Display weekends in your schedule view</p>
                 </div>
                 <Switch id="show-weekends" />
               </div>
