@@ -80,5 +80,3 @@ export function getCourses(): Course[] {
 export function getCourseById(id: string): Course | undefined {
   return courses.find((course) => course.id === id)
 }
-
-export { courses }

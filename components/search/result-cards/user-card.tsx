@@ -54,5 +54,3 @@ export function UserCard({ user }: UserCardProps) {
     </div>
   )
 }
-
-export default UserCard

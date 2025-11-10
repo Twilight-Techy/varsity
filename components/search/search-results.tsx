@@ -17,7 +17,7 @@ interface SearchResultsProps {
   filters: any
 }
 
-const SearchResults = ({ query, filters }: SearchResultsProps) => {
+export default function SearchResults({ query, filters }: SearchResultsProps) {
   const [results, setResults] = useState<SearchResult[]>([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState("all")
@@ -156,12 +156,7 @@ const SearchResults = ({ query, filters }: SearchResultsProps) => {
 
       {hasMore && (
         <div className="flex justify-center mt-6">
-          <Button
-            onClick={loadMore}
-            disabled={loadingMore}
-            variant="outline"
-            className="w-full max-w-xs bg-transparent"
-          >
+          <Button onClick={loadMore} disabled={loadingMore} variant="outline" className="w-full max-w-xs">
             {loadingMore ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -176,6 +171,3 @@ const SearchResults = ({ query, filters }: SearchResultsProps) => {
     </div>
   )
 }
-
-export { SearchResults }
-export default SearchResults

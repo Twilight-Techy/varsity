@@ -22,7 +22,7 @@ interface PostCardProps {
   }
 }
 
-function PostCard({ post }: PostCardProps) {
+export function PostCard({ post }: PostCardProps) {
   const createdAt = new Date(post.createdAt)
   const timeAgo = formatDistanceToNow(createdAt, { addSuffix: true })
 
@@ -70,5 +70,3 @@ function PostCard({ post }: PostCardProps) {
     </div>
   )
 }
-
-export default PostCard

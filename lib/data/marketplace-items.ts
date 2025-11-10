@@ -494,5 +494,3 @@ export function toggleBookmark(id: string): MarketplaceItem | null {
 export function markItemAsSold(id: string): MarketplaceItem | null {
   return updateMarketplaceItem(id, { isSold: true })
 }
-
-export { marketplaceItems }

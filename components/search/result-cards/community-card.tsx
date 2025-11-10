@@ -61,5 +61,3 @@ export function CommunityCard({ community }: CommunityCardProps) {
     </div>
   )
 }
-
-export default CommunityCard

@@ -12,7 +12,7 @@ interface SearchBarProps {
   initialQuery?: string
 }
 
-function SearchBar({ onSearch, initialQuery = "" }: SearchBarProps) {
+export function SearchBar({ onSearch, initialQuery = "" }: SearchBarProps) {
   const [query, setQuery] = useState(initialQuery)
   const [recentSearches, setRecentSearches] = useState<string[]>([])
   const [showRecent, setShowRecent] = useState(false)
@@ -97,6 +97,3 @@ function SearchBar({ onSearch, initialQuery = "" }: SearchBarProps) {
     </div>
   )
 }
-
-export { SearchBar }
-export default SearchBar

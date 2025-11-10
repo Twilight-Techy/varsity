@@ -18,7 +18,7 @@ interface SearchFiltersProps {
   className?: string
 }
 
-function SearchFilters({ onFilterChange, className }: SearchFiltersProps) {
+export default function SearchFilters({ onFilterChange, className }: SearchFiltersProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [filters, setFilters] = useState({
     type: "all",
@@ -271,6 +271,3 @@ function SearchFilters({ onFilterChange, className }: SearchFiltersProps) {
     </div>
   )
 }
-
-export { SearchFilters }
-export default SearchFilters

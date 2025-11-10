@@ -381,17 +381,3 @@ export function getMockSearchResults(
     hasMore: startIndex + pageSize < results.length,
   }
 }
-
-export function getSearchResults(
-  type: "all" | "people" | "communities" | "posts" | "courses" = "all",
-  query = "",
-  filters: {
-    university?: string
-    department?: string
-    year?: string
-    sortBy?: string
-  } = {},
-  page = 1,
-) {
-  return getMockSearchResults(type, query, filters, page)
-}

@@ -12,35 +12,35 @@ import { Upload, Plus, X } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export default function UploadResourceForm() {
-  const [tags, setTags] = React.useState<string[]>([])
-  const [tagInput, setTagInput] = React.useState("")
-  const [selectedFile, setSelectedFile] = React.useState<File | null>(null)
+  const [tags, setTags] = React.useState<string[]>([]);
+  const [tagInput, setTagInput] = React.useState("");
+  const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
 
   const handleAddTag = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && tagInput.trim() !== "") {
-      e.preventDefault()
+      e.preventDefault();
       if (!tags.includes(tagInput.trim())) {
-        setTags([...tags, tagInput.trim()])
+        setTags([...tags, tagInput.trim()]);
       }
-      setTagInput("")
+      setTagInput("");
     }
-  }
+  };
 
   const handleRemoveTag = (tagToRemove: string) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove))
-  }
+    setTags(tags.filter((tag) => tag !== tagToRemove));
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setSelectedFile(e.target.files[0])
+      setSelectedFile(e.target.files[0]);
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted")
-  }
+    console.log("Form submitted");
+  };
 
   return (
     <Card>
@@ -51,8 +51,14 @@ export default function UploadResourceForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <FormLabel htmlFor="title">Title</FormLabel>
-                <Input id="title" placeholder="Enter resource title" required />
-                <FormDescription>Choose a clear and descriptive title</FormDescription>
+                <Input
+                  id="title"
+                  placeholder="Enter resource title"
+                  required
+                />
+                <FormDescription>
+                  Choose a clear and descriptive title
+                </FormDescription>
               </div>
 
               <div className="space-y-2">
@@ -73,9 +79,15 @@ export default function UploadResourceForm() {
 
             <div className="space-y-2">
               <FormLabel htmlFor="description">Description</FormLabel>
-              <Textarea id="description" placeholder="Describe the resource..." rows={4} required />
+              <Textarea
+                id="description"
+                placeholder="Describe the resource..."
+                rows={4}
+                required
+              />
               <FormDescription>
-                Provide details about what this resource contains and how it can help others
+                Provide details about what this resource contains and how it can
+                help others
               </FormDescription>
             </div>
 
@@ -105,7 +117,9 @@ export default function UploadResourceForm() {
                     <SelectItem value="engineering">Engineering</SelectItem>
                     <SelectItem value="sciences">Sciences</SelectItem>
                     <SelectItem value="arts">Arts</SelectItem>
-                    <SelectItem value="social-sciences">Social Sciences</SelectItem>
+                    <SelectItem value="social-sciences">
+                      Social Sciences
+                    </SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -120,9 +134,15 @@ export default function UploadResourceForm() {
                     <SelectValue placeholder="Select department" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="computer-science">Computer Science</SelectItem>
-                    <SelectItem value="electrical-engineering">Electrical Engineering</SelectItem>
-                    <SelectItem value="mechanical-engineering">Mechanical Engineering</SelectItem>
+                    <SelectItem value="computer-science">
+                      Computer Science
+                    </SelectItem>
+                    <SelectItem value="electrical-engineering">
+                      Electrical Engineering
+                    </SelectItem>
+                    <SelectItem value="mechanical-engineering">
+                      Mechanical Engineering
+                    </SelectItem>
                     <SelectItem value="economics">Economics</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
@@ -149,8 +169,14 @@ export default function UploadResourceForm() {
 
             <div className="space-y-2">
               <FormLabel htmlFor="course">Course</FormLabel>
-              <Input id="course" placeholder="E.g. CSC 101, MTH 102" required />
-              <FormDescription>Enter the course code or title</FormDescription>
+              <Input
+                id="course"
+                placeholder="E.g. CSC 101, MTH 102"
+                required
+              />
+              <FormDescription>
+                Enter the course code or title
+              </FormDescription>
             </div>
 
             <div className="space-y-2">
@@ -176,7 +202,9 @@ export default function UploadResourceForm() {
                 onChange={(e) => setTagInput(e.target.value)}
                 onKeyDown={handleAddTag}
               />
-              <FormDescription>Add relevant tags to help others find your resource</FormDescription>
+              <FormDescription>
+                Add relevant tags to help others find your resource
+              </FormDescription>
             </div>
           </div>
 
@@ -194,7 +222,12 @@ export default function UploadResourceForm() {
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
                   </p>
-                  <Button type="button" variant="outline" size="sm" onClick={() => setSelectedFile(null)}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setSelectedFile(null)}
+                  >
                     Remove
                   </Button>
                 </div>
@@ -214,8 +247,12 @@ export default function UploadResourceForm() {
                       <Button
                         type="button"
                         variant="outline"
-                        className="mt-2 bg-transparent"
-                        onClick={() => document.getElementById("file-upload")?.click()}
+                        className="mt-2"
+                        onClick={() =>
+                          document
+                            .getElementById("file-upload")
+                            ?.click()
+                        }
                       >
                         <Plus className="h-4 w-4 mr-2" />
                         Browse Files
@@ -246,7 +283,9 @@ export default function UploadResourceForm() {
                   Make this resource public
                 </label>
               </div>
-              <FormDescription>Public resources can be viewed and downloaded by all users</FormDescription>
+              <FormDescription>
+                Public resources can be viewed and downloaded by all users
+              </FormDescription>
             </div>
 
             <div className="space-y-2">
@@ -256,11 +295,13 @@ export default function UploadResourceForm() {
                   htmlFor="terms"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                  I confirm that I have the right to share this resource and it does not violate any copyright laws or
-                  university policies
+                  I confirm that I have the right to share this resource and it
+                  does not violate any copyright laws or university policies
                 </label>
               </div>
-              <FormDescription>You must agree to our terms before uploading</FormDescription>
+              <FormDescription>
+                You must agree to our terms before uploading
+              </FormDescription>
             </div>
           </div>
 
@@ -277,6 +318,4 @@ export default function UploadResourceForm() {
           </div>
         </form>
       </CardContent>
-    </Card>
-  )
-}
+    </Card>\
